@@ -24,6 +24,7 @@ clone_repo() {
         chrome_extensions
         texdata1
         texdata2
+        accounting
         Music
         lyrics
         korean
