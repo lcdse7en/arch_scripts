@@ -22,6 +22,7 @@ clone_repo() {
     array=(
         arch_scripts
         chrome_extensions
+        mygh
         texdata1
         texdata2
         accounting
@@ -32,7 +33,7 @@ clone_repo() {
         pandas
         os
         contact
-        tang-peotry
+        tang-poetry
         country_list
     )
 
