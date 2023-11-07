@@ -30,6 +30,7 @@ clone_repo() {
         printf "*%.0s" {1..60}
         printf "${RESET}%s\n"
 
+        # git clone git@github.com:lcdse7en/arch_scripts.git
         # git clone git@github.com:lcdse7en/chrome_extensions.git
         # git clone git@github.com:lcdse7en/texdata1.git
         # git clone git@github.com:lcdse7en/texdata2.git
@@ -57,6 +58,7 @@ clone_repo() {
         mkdir "$target_dir"
 
         cd "$target_dir" || exit
+        git clone git@github.com:lcdse7en/arch_scripts.git
         git clone git@github.com:lcdse7en/chrome_extensions.git
         git clone git@github.com:lcdse7en/texdata1.git
         git clone git@github.com:lcdse7en/texdata2.git
