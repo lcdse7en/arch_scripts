@@ -19,9 +19,23 @@ RESET=$(printf '\033[m')
 
 clone_repo() {
     local target_dir="$HOME/github_upload"
+    array=(
+        arch_scripts
+        chrome_extensions
+        texdata1
+        texdata2
+        Music
+        lyrics
+        korean
+        pandas
+        os
+        contact
+        country_list
+    )
 
     if [[ -d "$target_dir" ]]; then
         cd "$target_dir" || exit
+
         printf "${SKYBLUE}%s"
         printf "*%.0s" {1..60}
         printf "${RESET}%s\n"
@@ -30,49 +44,15 @@ clone_repo() {
         printf "*%.0s" {1..60}
         printf "${RESET}%s\n"
 
-        # git clone git@github.com:lcdse7en/arch_scripts.git
-        # git clone git@github.com:lcdse7en/chrome_extensions.git
-        # git clone git@github.com:lcdse7en/texdata1.git
-        # git clone git@github.com:lcdse7en/texdata2.git
-        # git clone git@github.com:lcdse7en/Music.git
+        for element in "${array[@]}"; do
+            if [[ ! -d "$target_dir/$element" ]]; then
+                printf "$YELLOW cloning $element to $target_dir/$element ... %s$RESET\n"
+                git clone git@github.com:lcdse7en/"$element".git
+            else
+                printf "$RED$target_dir/$element exist %s\n$RESET"
+            fi
+        done
 
-        # git clone git@github.com:lcdse7en/lyrics.git
-        # git clone git@github.com:lcdse7en/korean.git
-        # git clone git@github.com:lcdse7en/pandas.git
-        # git clone git@github.com:lcdse7en/os.git
-        # git clone git@github.com:lcdse7en/contact.git
-        # git clone git@github.com:lcdse7en/country_list.git
-
-        #  NOTE: work
-
-        # git clone git@github.com:lcdse7en/accounting.git
-    else
-        printf "${SKYBLUE}%s"
-        printf "*%.0s" {1..60}
-        printf "${RESET}%s\n"
-        printf "$YELLOW Creating dir: ${target_dir} ...%s$RESET\n"
-        printf "${SKYBLUE}%s"
-        printf "*%.0s" {1..60}
-        printf "${RESET}%s\n"
-
-        mkdir "$target_dir"
-
-        cd "$target_dir" || exit
-        git clone git@github.com:lcdse7en/arch_scripts.git
-        git clone git@github.com:lcdse7en/chrome_extensions.git
-        git clone git@github.com:lcdse7en/texdata1.git
-        git clone git@github.com:lcdse7en/texdata2.git
-        git clone git@github.com:lcdse7en/Music.git
-
-        git clone git@github.com:lcdse7en/lyrics.git
-        git clone git@github.com:lcdse7en/korean.git
-        git clone git@github.com:lcdse7en/pandas.git
-        git clone git@github.com:lcdse7en/os.git
-        git clone git@github.com:lcdse7en/contact.git
-        git clone git@github.com:lcdse7en/country_list.git
-
-        #  NOTE: work
-        git clone git@github.com:lcdse7en/accounting.git
     fi
 }
 
