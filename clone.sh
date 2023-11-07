@@ -50,7 +50,7 @@ clone_repo() {
 
         for element in "${array[@]}"; do
             if [[ ! -d "$target_dir/$element" ]]; then
-                printf "$YELLOW cloning $element to $target_dir/$element ... %s$RESET\n"
+                printf "\n$YELLOW cloning $element to $target_dir/$element ... %s$RESET\n"
                 git clone git@github.com:lcdse7en/"$element".git
             else
                 printf "$RED$target_dir/$element exist %s\n$RESET"
