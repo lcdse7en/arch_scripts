@@ -25,12 +25,14 @@ clone_repo() {
         texdata1
         texdata2
         accounting
+        financial_statement
         Music
         lyrics
         korean
         pandas
         os
         contact
+        tang-peotry
         country_list
     )
 
