@@ -116,6 +116,7 @@ Install_packages() {
         openjdk17-src
         jre17-openjdk
         jre17-openjdk-headless
+        java-runtime-common
         freeplane
         kcalc
         geoip
