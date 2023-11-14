@@ -36,7 +36,6 @@ clone_repo() {
         tang-poetry
         country_list
     )
-
     if [[ -d "$target_dir" ]]; then
         cd "$target_dir" || exit
 
@@ -56,12 +55,10 @@ clone_repo() {
                 printf "$RED$target_dir/$element exist %s\n$RESET"
             fi
         done
-
     fi
 }
 
 main() {
     clone_repo
 }
-
 main

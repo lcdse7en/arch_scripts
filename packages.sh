@@ -111,6 +111,9 @@ Install_packages() {
         bison
         edk2-ovmf
         mariadb
+        jre17-openjdk
+        jdk17-openjdk
+        freeplane
         kcalc
         geoip
         newsboat
