@@ -111,8 +111,11 @@ Install_packages() {
         bison
         edk2-ovmf
         mariadb
-        jre17-openjdk
         jdk17-openjdk
+        openjdk17-doc
+        openjdk17-src
+        jre17-openjdk
+        jre17-openjdk-headless
         freeplane
         kcalc
         geoip
