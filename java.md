@@ -11,4 +11,6 @@ sudo pacman -S jre17-openjdk-headless
 
 archlinux-java status
 sudo archlinux-java set java-17-openjdk
+
+sudo pacman -S java-runtime-common
 ```
