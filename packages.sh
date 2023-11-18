@@ -73,6 +73,9 @@ Install_packages() {
         feh
         neofetch
         fastfetch
+        fortune-mod
+        cowsay
+        lolcat
         nodejs
         npm
         ffmpegthumbnailer
