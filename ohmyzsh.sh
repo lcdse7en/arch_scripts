@@ -49,6 +49,7 @@ Install_plugins() {
         local autojump_dir="$HOME/.oh-my-zsh/custom/plugins/autojump"
         local vimode_dir="$HOME/.oh-my-zsh/custom/plugins/zsh-vi-mode"
         local you_should_use="$HOME/.oh-my-zsh/custom/plugins/you-should-use"
+        local zsh_history_substring_search="$HOME/.oh-my-zsh/custom/plugins/zsh-history-substring-search"
 
         #  NOTE: zsh-autosuggestions
         if [[ -d "$autosuggestions_dir" ]]; then
@@ -110,6 +111,19 @@ Install_plugins() {
             printf "\n"
             git clone https://github.com/MichaelAquilina/zsh-you-should-use.git \
                 "$HOME"/.oh-my-zsh/custom/plugins/you-should-use
+            # ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-vi-mode
+        fi
+        #  NOTE: zsh-history-substring-search
+        if [[ -d "$zsh_history_substring_search" ]]; then
+            printf "${RED}%s"
+            printf 'Directory: %s exists...\n' "$zsh_history_substring_search"
+            printf "${RESET}%s\n"
+        else
+            printf "$YELLOW%s$RESET\n" "Downloading zsh-history-substring-search ..."
+            printf "$SKYBLUE*%.0s" {1..50}
+            printf "\n"
+            git clone https://github.com/zsh-users/zsh-history-substring-search.git \
+                "$HOME"/.oh-my-zsh/custom/plugins/zsh-history-substring-search
             # ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-vi-mode
         fi
     fi

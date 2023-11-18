@@ -72,6 +72,7 @@ Install_packages() {
         gnome-keyring
         feh
         neofetch
+        fastfetch
         nodejs
         npm
         ffmpegthumbnailer
