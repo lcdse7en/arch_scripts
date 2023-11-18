@@ -137,6 +137,7 @@ Install_packages() {
         python-notify2
         sane
         xsane
+        yamlfmt
     )
 
     for element in "${array[@]}"; do
