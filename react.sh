@@ -17,8 +17,9 @@ SKYBLUE=$(printf '\033[36m')
 BOLD=$(printf '\033[1m')
 RESET=$(printf '\033[m')
 
-create_project() {
-    local target_dir="$HOME/github_upload/react-project"
+target_dir="$HOME/github_upload/react-project"
+
+client() {
     cd "$target_dir" || exit
 
     npm create vite@latest
@@ -26,12 +27,23 @@ create_project() {
     cd "$target_dir/$projectName" || exit
     npm install
     npm i react-redux @reduxjs/toolkit react-router-dom @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid
+    npm i recharts
     npm i -D @types/react-dom
     npm i -D @types/node
 }
 
+server() {
+    cd "$target_dir" || exit
+    mkdir server
+    local serverDir="$target_dir/server"
+    cd "$serverDir" || exit
+    npm i express body-parser cors dotenv helmet morgan mongoose mongoose-currency
+    npm i -D nodemon
+}
+
 main() {
-    create_project
+    # client
+    server
 }
 
 main
