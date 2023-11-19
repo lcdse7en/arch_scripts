@@ -138,6 +138,7 @@ Install_packages() {
         sane
         xsane
         yamlfmt
+        vivid
     )
 
     for element in "${array[@]}"; do

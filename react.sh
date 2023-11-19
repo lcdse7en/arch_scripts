@@ -26,24 +26,52 @@ client() {
     read -r -p "Enter Project Name: " -e projectName
     cd "$target_dir/$projectName" || exit
     npm install
-    npm i react-redux @reduxjs/toolkit react-router-dom @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid
+    npm i react-redux \
+        @reduxjs/toolkit \
+        react-router-dom \
+        @mui/material \
+        @emotion/react \
+        @emotion/styled \
+        @mui/icons-material \
+        @mui/x-data-grid
     npm i recharts
+    npm i regression
     npm i -D @types/react-dom
     npm i -D @types/node
+    npm i -D eslint eslint-config-react-app
+    npm i -D @types/regression
 }
 
 server() {
     cd "$target_dir" || exit
-    mkdir server
-    local serverDir="$target_dir/server"
-    cd "$serverDir" || exit
-    npm i express body-parser cors dotenv helmet morgan mongoose mongoose-currency
-    npm i -D nodemon
+    local server_dir="$target_dir/server"
+
+    if [[ -d "$server_dir" ]]; then
+        printf "${RED}Delete $server_dir now and recreate it.%s${RESET}\n"
+        rm -rf server
+
+        mkdir server
+        cd "$server_dir" || exit
+        npm init -y
+        npm i express body-parser cors dotenv helmet morgan mongoose mongoose-currency
+        npm i -D nodemon
+    else
+        mkdir server
+        cd "$server_dir" || exit
+        npm init -y
+        npm i express body-parser cors dotenv helmet morgan mongoose mongoose-currency
+        npm i -D nodemon
+    fi
+}
+
+flyio() {
+    curl -L https://fly.io/install.sh | sh
 }
 
 main() {
     # client
     server
+    # flyio
 }
 
 main
