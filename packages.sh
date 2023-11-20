@@ -140,6 +140,7 @@ Install_packages() {
         yamlfmt
         vivid
         kdenlive
+        blender
     )
 
     for element in "${array[@]}"; do
