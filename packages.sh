@@ -139,6 +139,7 @@ Install_packages() {
         xsane
         yamlfmt
         vivid
+        kdenlive
     )
 
     for element in "${array[@]}"; do
