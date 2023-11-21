@@ -17,24 +17,26 @@ SKYBLUE=$(printf '\033[36m')
 BOLD=$(printf '\033[1m')
 RESET=$(printf '\033[m')
 
-downloadDir="$HOME/Downloads"
+downloadDir="$HOME/github_upload"
 
 Suckless() {
     if [[ ! -d "${downloadDir}" ]]; then
-        mkdir "$HOME"/Downloads
+        mkdir "$downloadDir"
     else
         git clone https://github.com/lcdse7en/dwm.git "$downloadDir"/dwm
-        git clone https://github.com/lcdse7en/st.git "$downloadDir"/st
-        git clone https://github.com/lcdse7en/dwmblocks.git "$downloadDir"/dwmblocks
-        git clone https://github.com/lcdse7en/slock.git "$downloadDir"/slock
+        # git clone https://github.com/lcdse7en/st.git "$downloadDir"/st
+        # git clone https://github.com/lcdse7en/dwmblocks.git "$downloadDir"/dwmblocks
+        # git clone https://github.com/lcdse7en/slock.git "$downloadDir"/slock
     fi
 }
 
 Install_dwm() {
-    local dwmDir=${downloadDir}/dwm
+    local dwmDir="${downloadDir}"/dwm
     cd "$dwmDir" || exit
     sudo make
     sudo make clean install
+    sudo rm -rf /usr/local/bin/dwm
+    sudo cp dwm /usr/local/bin/
 }
 
 Install_st() {
@@ -58,11 +60,11 @@ Install_slock() {
     sudo make clean install
 }
 main() {
-    Suckless
+    # Suckless
     Install_dwm
-    Install_st
-    Install_dwmblocks
-    Install_slock
+    # Install_st
+    # Install_dwmblocks
+    # Install_slock
 }
 
 main
