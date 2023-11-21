@@ -139,6 +139,8 @@ Install_packages() {
         xsane
         yamlfmt
         vivid
+        gnome-tweaks
+        papirus-icon-theme
         kdenlive
         blender
     )

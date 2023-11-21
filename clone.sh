@@ -35,6 +35,7 @@ clone_repo() {
         contact
         tang-poetry
         country_list
+        dkenlive
     )
     if [[ -d "$target_dir" ]]; then
         cd "$target_dir" || exit
