@@ -142,6 +142,7 @@ Install_packages() {
         gnome-tweaks
         papirus-icon-theme
         kdenlive
+        breeze
         blender
     )
 
