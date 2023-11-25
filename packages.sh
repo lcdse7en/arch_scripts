@@ -144,6 +144,8 @@ Install_packages() {
         kdenlive
         breeze
         blender
+        gimp
+        scribus
     )
 
     for element in "${array[@]}"; do
