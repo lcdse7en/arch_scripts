@@ -20,7 +20,11 @@ RESET=$(printf '\033[m')
 targetDir="$HOME/Downloads"
 
 Install-script-fu() {
-    pass
+    cd "$targetDir" || exit
+
+    git clone https://github.com/script-fu/script-fu.github.io
+    cd "$targetDir/script-fu.github.io/procedures" || exit
+    sudo cp ./* "/usr/share/gimp/2.0/scripts/"
 }
 
 Install-icon-theme() {
@@ -40,9 +44,9 @@ Install-theme() {
 }
 
 main() {
-    # Install-script-fu
+    Install-script-fu
     # Install-icon-theme
-    Install-theme
+    # Install-theme
 }
 
 main
