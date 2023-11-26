@@ -29,24 +29,36 @@ Install-script-fu() {
 
 Install-icon-theme() {
     cd "$targetDir" || exit
-    # git clone https://github.com/Uzugijin/GIMP-IconThemes
-    cd "$targetDir/GIMP-IconThemes" || exit
-    sudo cp -r BlenderIcons "/usr/share/gimp/2.0/icons/"
+    local icontheme="$targetDir/GIMP-IconThemes"
+
+    if [[ -d "$icontheme" ]]; then
+        cd "$icontheme" || exit
+        sudo cp -r BlenderIcons "/usr/share/gimp/2.0/icons/"
+    else
+        git clone https://github.com/Uzugijin/GIMP-IconThemes
+        cd "$icontheme" || exit
+        sudo cp -r BlenderIcons "/usr/share/gimp/2.0/icons/"
+    fi
 }
 
 Install-theme() {
     cd "$targetDir" || exit
+    local themes="$targetDir/gimp"
 
-    git clone https://github.com/dracula/gimp
-    cd "$targetDir/gimp" || exit
-    sudo cp -r Dracula "/usr/share/gimp/2.0/themes/"
-
+    if [[ -d "$themes" ]]; then
+        cd "$themes" || exit
+        sudo cp -r Dracula "/usr/share/gimp/2.0/themes/"
+    else
+        git clone https://github.com/dracula/gimp
+        cd "$themes" || exit
+        sudo cp -r Dracula "/usr/share/gimp/2.0/themes/"
+    fi
 }
 
 main() {
-    Install-script-fu
-    # Install-icon-theme
-    # Install-theme
+    # Install-script-fu
+    Install-icon-theme
+    Install-theme
 }
 
 main
