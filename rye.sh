@@ -77,6 +77,7 @@ Install_packages() {
     local array=(
         black
         pygment
+        stig
     )
     rye install "${array[@]}"
 }
@@ -86,6 +87,7 @@ Uninstall_packages() {
     local array=(
         black
         pygment
+        stig
     )
     rye uninstall "${array[@]}"
 }
