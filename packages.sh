@@ -40,6 +40,9 @@ Install_packages() {
         zathura
         okular
         lf
+        lynx
+        odt2txt
+        gnumeric
         joshuto
         stow
         nsxiv
@@ -146,7 +149,6 @@ Install_packages() {
         blender
         gimp
         scribus
-        marksman
     )
 
     for element in "${array[@]}"; do

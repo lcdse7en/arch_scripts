@@ -33,6 +33,7 @@ Install_packages() {
         lemonbar-xft-git
         qqmusic-bin
         obs-studio
+        transmission-remote-gui
     )
     for element in "${array[@]}"; do
         installed=$(yay -Qs "$element")
