@@ -146,6 +146,7 @@ Install_packages() {
         blender
         gimp
         scribus
+        marksman
     )
 
     for element in "${array[@]}"; do
