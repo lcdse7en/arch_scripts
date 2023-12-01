@@ -9,7 +9,6 @@
 
 # source /etc/profile.d/import_shell_libs.sh
 
-
 RED=$(printf '\033[31m')
 GREEN=$(printf '\033[32m')
 YELLOW=$(printf '\033[33m')
@@ -17,6 +16,9 @@ BLUE=$(printf '\033[34m')
 SKYBLUE=$(printf '\033[36m')
 BOLD=$(printf '\033[1m')
 RESET=$(printf '\033[m')
+
+# yarn init -y
+# npm init @eslint/config
 
 npm_Install_packages() {
     sudo npm install vscode-langservers-extracted -g
