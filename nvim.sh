@@ -131,12 +131,12 @@ Clone_vimrc() {
 }
 
 main() {
-    Remove_neovim
-    Install_bob
-    Install_neovim
-    Use_neovim
+    # Remove_neovim
+    # Install_bob
+    # Install_neovim
+    # Use_neovim
     Update_neovim
-    Clone_vimrc
+    # Clone_vimrc
 }
 
 main

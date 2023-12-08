@@ -149,6 +149,8 @@ Install_packages() {
         blender
         gimp
         scribus
+        helix
+        numlockx
     )
 
     for element in "${array[@]}"; do
