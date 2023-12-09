@@ -151,6 +151,8 @@ Install_packages() {
         scribus
         helix
         numlockx
+        wezterm
+        kitty
     )
 
     for element in "${array[@]}"; do

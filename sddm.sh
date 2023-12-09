@@ -20,6 +20,8 @@ RESET=$(printf '\033[m')
 Install_sddm() {
     array=(
         sddm
+        sddm-kcm
+        plasma
         gst-libav
         phonon-qt5-gstreamer
         gst-plugins-good
@@ -56,6 +58,7 @@ Test_sddm() {
 Systemctl() {
     # sudo systemctl disable sddm
     sudo systemctl enable sddm
+    sudo systemctl start sddm
 }
 
 Edit_conf() {
@@ -74,7 +77,7 @@ main() {
     # Test_sddm
 
     Systemctl
-    Edit_conf
+    # Edit_conf
 }
 
 main

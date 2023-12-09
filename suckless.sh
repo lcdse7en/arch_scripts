@@ -63,9 +63,9 @@ Install_slock() {
 }
 main() {
     # Suckless
-    # Install_dwm
+    Install_dwm
     # Install_st
-    Install_dwmblocks
+    # Install_dwmblocks
     # Install_slock
 }
 
