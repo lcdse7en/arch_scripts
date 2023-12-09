@@ -17,12 +17,14 @@ SKYBLUE=$(printf '\033[36m')
 BOLD=$(printf '\033[1m')
 RESET=$(printf '\033[m')
 
+user="se7en1"
+
 AddUser() {
-    useradd -m -G wheel se7en
-    passwd se7en <<-EOF
-	921216
-	921216
-	EOF
+    useradd -m -G wheel "$user"
+    passwd "$user" <<-EOF
+		921216
+		921216
+		EOF
 }
 
 Wheel() {
@@ -32,7 +34,7 @@ Wheel() {
 
 main() {
     AddUser
-    Wheel
+    # Wheel
 }
 
 main
