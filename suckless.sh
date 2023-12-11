@@ -24,8 +24,8 @@ Suckless() {
         mkdir "$downloadDir"
     else
         # git clone https://github.com/lcdse7en/dwm.git "$downloadDir"/dwm
-        # git clone https://github.com/lcdse7en/st.git "$downloadDir"/st
-        git clone https://github.com/lcdse7en/dwmblocks.git "$downloadDir"/dwmblocks
+        git clone https://github.com/lcdse7en/st.git "$downloadDir"/st
+        # git clone https://github.com/lcdse7en/dwmblocks.git "$downloadDir"/dwmblocks
         # git clone https://github.com/lcdse7en/slock.git "$downloadDir"/slock
     fi
 }
@@ -62,9 +62,9 @@ Install_slock() {
     sudo make clean install
 }
 main() {
-    # Suckless
-    Install_dwm
-    # Install_st
+    Suckless
+    # Install_dwm
+    Install_st
     # Install_dwmblocks
     # Install_slock
 }

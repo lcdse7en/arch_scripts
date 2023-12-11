@@ -151,12 +151,12 @@ remove() {
 }
 
 main() {
-    # Install_rye
-    # Rye_pin
-    # Rye_add
-    # Install_packages
+    Install_rye
+    Rye_pin
+    Rye_add
+    Install_packages
     # Uninstall_packages
-    # Rye_env
+    Rye_env
     Python_list_installed
     # Python_list_downloadable
     # fetch

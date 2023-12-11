@@ -153,6 +153,8 @@ Install_packages() {
         numlockx
         wezterm
         kitty
+        udiskie
+        ueberzugpp
     )
 
     for element in "${array[@]}"; do

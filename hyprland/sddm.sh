@@ -17,6 +17,8 @@ SKYBLUE=$(printf '\033[36m')
 BOLD=$(printf '\033[1m')
 RESET=$(printf '\033[m')
 
+source global.sh
+
 Install_sddm() {
     array=(
         sddm
@@ -37,18 +39,13 @@ Install_sddm() {
     done
 }
 
-Install_themes() {
-    local downloadpath="$HOME/Downloads"
-    local targetDir="/usr/share/sddm/themes/aerial-sddm-theme"
-
-    if [[ ! -d "$targetDir" ]]; then
-        cd "$downloadpath" || exit
-        git clone https://github.com/3ximus/aerial-sddm-theme.git
-        sudo mv aerial-sddm-theme $targetDir
-    else
-        printf "\n$BLUE$targetDir/aerial-sddm-theme exies.%s$RESET\n"
+sddm_themes() {
+    if [ ! -d /etc/sddm.conf.d ]; then
+        sudo mkdir /etc/sddm.conf.d
     fi
 
+    sudo tar -xvzf ~/dotfiles/source/sddm-theme/Sddm_Corners.tar.gz -C /usr/share/sddm/themes/
+    sudo mv /usr/share/sddm/themes/corners/kde_settings.conf /etc/sddm.conf.d/
 }
 
 Test_sddm() {
@@ -72,7 +69,7 @@ Edit_conf() {
 
 main() {
     Install_sddm
-    Install_themes
+    sddm_themes
 
     # Test_sddm
 

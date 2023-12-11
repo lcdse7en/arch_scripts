@@ -52,7 +52,7 @@ Env() {
 
 main() {
     Install_package
-    # Env
+    Env
 }
 
 main
